@@ -27,7 +27,7 @@
           <td>{{ item.phoneNo }}</td>
           <td>
             <button @click="updateItem(item)">Update</button>
-            <button @click="deleteItem(index)">Delete</button>
+            <button @click="deleteItem(item, index)">Delete</button>
           </td>
         </tr>
         </tbody>
@@ -85,27 +85,23 @@ export default {
       PhonebookService.updateContact(item)
         .then((res) => {
           this.data = res.data.data;
-          this.getListItem();
         })
         .catch((err) => {
           console.error("err : ", err.message);
         });
     },
 
-    deleteItem(row) {
-
-      console.info("info row : ", row);
-
-    //   PhonebookService.deleteContact(this.data)
-    //   .then((res) => {
-    //     this.data = res.data.data;
-    //   })
-    //   .catch((err) => {
-    //     console.error("err : ", err.message);
-    //   });
-      
-      this.items.splice(row, 1);
-      //this.getListItem();
+    deleteItem(item, row) {
+      // PhonebookService.deleteContact(item)
+      //   .then((res) => {
+      //     this.data = res.data.data;
+      //   })
+      //   .catch((err) => {
+      //     console.error("err : ", err.message);
+      //   });
+        
+        this.items.splice(row, 1);
+      // this.getListItem();
     },
   },
 
