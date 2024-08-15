@@ -1,8 +1,13 @@
 # phonebook-fe
 
+## Open Web Browser
+
+    http://localhost:8181/
+
 ## Project setup
 ```
 npm install
+npm install axios
 ```
 
 ### Compiles and hot-reloads for development
